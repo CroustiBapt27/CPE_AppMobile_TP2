@@ -26,7 +26,7 @@ export class MeteoPage {
     afficher() {
         let alert = this.alertCtrl.create({
             title: 'Error',
-            subTitle: 'Something went wrong :/',
+            subTitle: 'Code postal non reconnu :/',
             buttons: ['OK']
         });
         this.afficher_resultat = true;
@@ -37,9 +37,10 @@ export class MeteoPage {
             data => {
                 this.temperature = data.main.temp;
                 this.meteo = data.weather[0].main;
-                this.nom_ville = data.nom_ville;
+                this.nom_ville = data.name;
                 var icone = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
                 this.icone_meteo = icone;
+                console.log(data)
             },
             (err) => {
                 alert.present();
