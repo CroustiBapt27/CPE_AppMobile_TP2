@@ -13,7 +13,7 @@ export class MeteoPage {
     meteo: string;
     code_postal: number;
     url: any;
-    name: string;
+    nom_ville: string;
     
     constructor(public navCtrl: NavController, public navParams: NavParams,
         public alertCtrl: AlertController, public http: Http) {
@@ -33,7 +33,7 @@ export class MeteoPage {
             data => {
                 this.temperature = data.main.temp;
                 this.meteo = data.weather[0].main;
-                this.name = data.name;
+                this.nom_ville = data.nom_ville;
             },
             (err) => {
                 alert.present();

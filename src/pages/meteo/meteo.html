@@ -25,9 +25,8 @@
             <button ion-button full (click)='afficher();'>Afficher</button>
         </div>
     <ion-card text-center [hidden]=!ShowResult>
-        <h4>Meteo de {{name}}</h4>
+        <h4>Meteo de {{nom_ville}}, {{temperature}}°C</h4>
         <h4>{{meteo}}</h4>
-        <h4>Temperature: {{temperature}}°C</h4>
         <img [src]="icone_meteo" />
     </ion-card>
 </ion-content>
