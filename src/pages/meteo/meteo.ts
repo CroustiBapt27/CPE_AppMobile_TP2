@@ -14,9 +14,13 @@ export class MeteoPage {
     code_postal: number;
     url: any;
     nom_ville: string;
+    afficher_resultat: boolean;
+    icone_meteo: any;
     
     constructor(public navCtrl: NavController, public navParams: NavParams,
         public alertCtrl: AlertController, public http: Http) {
+
+        this.afficher_resultat = false;
     }
 
     afficher() {
@@ -25,7 +29,7 @@ export class MeteoPage {
             subTitle: 'Something went wrong :/',
             buttons: ['OK']
         });
-        this.ShowResult = true;
+        this.afficher_resultat = true;
         this.url = 'http://api.openweathermap.org/data/2.5/weather?zip=' + this.code_postal;
         this.url += ',fr&appid=68a40fffe840bac1f3463b4c9a130473&units=metric&lang=fr';
 

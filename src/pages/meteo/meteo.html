@@ -24,7 +24,7 @@
         <div padding>
             <button ion-button full (click)='afficher();'>Afficher</button>
         </div>
-    <ion-card text-center [hidden]=!ShowResult>
+    <ion-card text-center [hidden]=!afficher_resultat>
         <br />
         <h4>Meteo de {{nom_ville}}, {{temperature}}°C</h4>
         <h4>{{meteo}}</h4>
