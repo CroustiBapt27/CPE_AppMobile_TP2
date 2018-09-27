@@ -1,14 +1,23 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      connexion
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-list>
+        <ion-item>
+            <ion-label>Login</ion-label>
+            <ion-input type="text" [value]="login" [(ngModel)]="login"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Mot de passe</ion-label>
+            <ion-input type="password" [value]="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div padding>
+        <button ion-button full (click)='connexion();'>Connexion</button>
+    </div>
 </ion-content>
