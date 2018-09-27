@@ -13,8 +13,21 @@
 </ion-header>
 
 
+
 <ion-content padding>
-    <ion-card text-center>
+    <ion-list>
+        <ion-item>
+            <ion-label>Code postal</ion-label>
+            <ion-input type="text" [value]="code_postal" [(ngModel)]="code_postal"></ion-input>
+        </ion-item>
+    </ion-list>
+        <div padding>
+            <button ion-button full (click)='afficher();'>Afficher</button>
+        </div>
+    <ion-card text-center [hidden]=!ShowResult>
+        <h4>Meteo de {{name}}</h3>
+        <h4>{{meteo}}</h4>
+        <h4>Temperature: {{temperature}}°C</h4>
         <img [src]="icone_meteo" />
     </ion-card>
 </ion-content>
