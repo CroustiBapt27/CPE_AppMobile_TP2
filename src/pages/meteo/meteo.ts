@@ -25,7 +25,7 @@ export class MeteoPage {
             subTitle: 'Something went wrong :/',
             buttons: ['OK']
         });
-
+        this.ShowResult = true;
         this.url = 'http://api.openweathermap.org/data/2.5/weather?zip=' + this.code_postal;
         this.url += ',fr&appid=68a40fffe840bac1f3463b4c9a130473&units=metric&lang=fr';
 
@@ -34,6 +34,8 @@ export class MeteoPage {
                 this.temperature = data.main.temp;
                 this.meteo = data.weather[0].main;
                 this.nom_ville = data.nom_ville;
+                var icone = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+                this.icone_meteo = icone;
             },
             (err) => {
                 alert.present();
